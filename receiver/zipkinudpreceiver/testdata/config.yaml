@@ -1,0 +1,31 @@
+zipkin_udp/defaults:
+zipkin_udp/defaultudp:
+  listen_address: localhost:5875
+
+zipkin_udp/custom:
+  listen_address: localhost:5776
+  udp:
+    queue_size: 50
+    max_packet_size: 1_000
+    num_workers: 5
+
+zipkin_udp/udponly:
+  udp:
+    queue_size: 80
+    max_packet_size: 10
+    num_workers: 1
+
+zipkin_udp/empty_listen_address:
+  listen_address: ""
+
+zipkin_udp/invalid_listen_address:
+  listen_address: "123"
+
+zipkin_udp/invalid_port_string:
+  listen_address: "1.2.3:abc"
+
+zipkin_udp/negative_port:
+  listen_address: "123:-1"
+
+zipkin_udp/invalid_port_range:
+  listen_address: "123:65536"

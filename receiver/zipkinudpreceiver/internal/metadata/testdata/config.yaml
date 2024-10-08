@@ -1,0 +1,25 @@
+default:
+all_set:
+  metrics:
+    receiver_zipkin_udp_count_buffer_full:
+      enabled: true
+    receiver_zipkin_udp_count_spans_dropped:
+      enabled: true
+    receiver_zipkin_udp_count_spans_failed_to_parse:
+      enabled: true
+    receiver_zipkin_udp_count_spans_received:
+      enabled: true
+    receiver_zipkin_udp_count_udp_overflows:
+      enabled: true
+none_set:
+  metrics:
+    receiver_zipkin_udp_count_buffer_full:
+      enabled: false
+    receiver_zipkin_udp_count_spans_dropped:
+      enabled: false
+    receiver_zipkin_udp_count_spans_failed_to_parse:
+      enabled: false
+    receiver_zipkin_udp_count_spans_received:
+      enabled: false
+    receiver_zipkin_udp_count_udp_overflows:
+      enabled: false

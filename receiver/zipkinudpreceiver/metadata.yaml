@@ -1,0 +1,49 @@
+type: zipkin_udp
+
+status:
+  class: receiver
+  stability:
+    alpha: [traces]
+  distributions: [contrib]
+
+metrics:
+  receiver_zipkin_udp_count_spans_received:
+    description: Count of spans received by the Zipkin UDP receiver.
+    unit: "{spans}"
+    enabled: true
+    sum:
+      aggregation_temporality: cumulative
+      value_type: int
+      monotonic: true
+  receiver_zipkin_udp_count_spans_dropped:
+    description: Count of spans dropped by the Zipkin UDP receiver.
+    unit: "{spans}"
+    enabled: true
+    sum:
+      aggregation_temporality: cumulative
+      value_type: int
+      monotonic: true
+  receiver_zipkin_udp_count_spans_failed_to_parse:
+    description: Count of how often we fail to decode the incoming spans.
+    unit: "{spans}"
+    enabled: true
+    sum:
+      aggregation_temporality: cumulative
+      value_type: int
+      monotonic: true
+  receiver_zipkin_udp_count_udp_overflows:
+    description: Count of how often we have received a too big UDP package.
+    unit: "{events}"
+    enabled: true
+    sum:
+      aggregation_temporality: cumulative
+      value_type: int
+      monotonic: true
+  receiver_zipkin_udp_count_buffer_full:
+    description: Count of the number of times the internal buffer was full and we dropped spans.
+    unit: "{events}"
+    enabled: true
+    sum:
+      aggregation_temporality: cumulative
+      value_type: int
+      monotonic: true
